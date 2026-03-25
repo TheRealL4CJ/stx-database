@@ -24,6 +24,88 @@
             padding: 20px;
         }
 
+        /* Prevent scrolling while locked */
+        body.locked {
+            overflow: hidden;
+        }
+
+        /* --- Login Overlay Styles --- */
+        #login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .login-box {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--accent-red);
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(211, 47, 47, 0.4);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .login-box h1 {
+            color: var(--accent-red);
+            margin-top: 0;
+            letter-spacing: 2px;
+            border-bottom: 1px solid var(--accent-red);
+            padding-bottom: 10px;
+        }
+
+        .login-input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #000;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1em;
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: var(--accent-red);
+        }
+
+        .login-btn {
+            background-color: var(--accent-dark-red);
+            color: #fff;
+            border: 1px solid var(--accent-red);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .login-btn:hover {
+            background-color: var(--accent-red);
+        }
+
+        #error-msg {
+            color: var(--accent-red);
+            margin-top: 15px;
+            height: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        /* --- Main Document Styles --- */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -33,7 +115,6 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.8);
         }
 
-        /* Classified Warning Banner */
         .warning-banner {
             background-color: var(--accent-dark-red);
             border: 2px solid var(--accent-red);
@@ -50,7 +131,6 @@
             letter-spacing: 2px;
         }
 
-        /* Header Section */
         .header {
             display: flex;
             justify-content: space-between;
@@ -72,7 +152,6 @@
             font-weight: bold;
         }
 
-        /* Grid Layouts for Data */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -102,7 +181,6 @@
         .data-value.danger { color: var(--accent-red); }
         .data-value.euclid { color: #ffeb3b; }
 
-        /* Media / Images Section */
         .media-section {
             display: flex;
             gap: 15px;
@@ -136,7 +214,6 @@
             text-align: left;
         }
 
-        /* Content Sections */
         .content-section {
             margin-bottom: 25px;
         }
@@ -156,7 +233,18 @@
         }
     </style>
 </head>
-<body>
+<body class="locked">
+
+<div id="login-overlay">
+    <div class="login-box">
+        <h1>STAROXA OS</h1>
+        <p style="color: #888; font-size: 0.9em;">CLASSIFIED L4 TERMINAL</p>
+        <input type="text" id="username" class="login-input" placeholder="User ID" autocomplete="off">
+        <input type="password" id="password" class="login-input" placeholder="Passcode" autocomplete="off">
+        <button class="login-btn" onclick="checkCredentials()">Authenticate</button>
+        <div id="error-msg"></div>
+    </div>
+</div>
 
 <div class="container">
     <div class="warning-banner">
@@ -245,6 +333,44 @@
     </div>
 
 </div>
+
+<script>
+    function checkCredentials() {
+        const pass = document.getElementById('password').value;
+        const errorMsg = document.getElementById('error-msg');
+
+        // Check if the password is correct
+        if (pass === "admin") {
+            errorMsg.style.color = "var(--accent-green)";
+            errorMsg.innerText = "ACCESS GRANTED. DECRYPTING...";
+            
+            // Fade out effect
+            setTimeout(() => {
+                const overlay = document.getElementById('login-overlay');
+                overlay.style.opacity = '0';
+                
+                // Remove from DOM flow after fade and allow scrolling
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    document.body.classList.remove('locked');
+                }, 500); 
+            }, 800);
+        } else {
+            // Flash error message
+            errorMsg.style.color = "var(--accent-red)";
+            errorMsg.innerText = "ACCESS DENIED. UNAUTHORIZED USER.";
+            document.getElementById('password').value = ""; // Clear password field
+        }
+    }
+
+    // Allow pressing "Enter" to trigger the login button
+    document.getElementById("password").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            checkCredentials();
+        }
+    });
+</script>
 
 </body>
 </html>
