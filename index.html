@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staroxa Foundation - ITEM 7125</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #c8c8c8;
+            --accent-red: #d32f2f;
+            --accent-dark-red: #3b0d0d;
+            --accent-green: #4caf50;
+            --border-color: #333;
+            --panel-bg: #141414;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            background-color: #0f0f0f;
+            box-shadow: 0 0 15px rgba(0,0,0,0.8);
+        }
+
+        /* Classified Warning Banner */
+        .warning-banner {
+            background-color: var(--accent-dark-red);
+            border: 2px solid var(--accent-red);
+            color: #ffb3b3;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .warning-banner h1 {
+            color: var(--accent-red);
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #fff;
+        }
+
+        .header span.codename {
+            font-size: 1.5em;
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+
+        /* Grid Layouts for Data */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .data-panel {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+        }
+
+        .data-label {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .data-value {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .data-value.danger { color: var(--accent-red); }
+        .data-value.euclid { color: #ffeb3b; }
+
+        /* Media / Images Section */
+        .media-section {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+
+        .media-item {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .image-placeholder {
+            background-color: #222;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            border: 1px dashed #555;
+            color: #666;
+        }
+
+        .media-caption {
+            font-size: 0.85em;
+            color: #aaa;
+            text-align: left;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 25px;
+        }
+
+        .content-section h3 {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .date-stamp {
+            float: right;
+            font-size: 0.8em;
+            color: #666;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="warning-banner">
+        <h1>! ATTENTION ! [cite: 1]</h1>
+        <p>This document is top secret and can only be accessed by the S5 Council and authorized L4 personnel. [cite: 2]</p>
+        <p>Do not proceed into viewing this document if you are below the required classification level. [cite: 3]<br>
+        Further reading will result in detainment and demotion to an expedient. [cite: 4]</p>
+    </div>
+
+    <div class="header">
+        <h2>ITEM 7125 [cite: 5]</h2>
+        <span class="codename">GABE [cite: 6] | TOP SECRET [cite: 7]</span>
+    </div>
+
+    <div class="grid-container">
+        <div class="data-panel">
+            <div class="data-label">Primary Class [cite: 8]</div>
+            <div class="data-value euclid">EUCLID [cite: 10]</div>
+        </div>
+        <div class="data-panel">
+            <div class="data-label">Disruption Class [cite: 9]</div>
+            <div class="data-value">VLAM [cite: 11]</div>
+        </div>
+        <div class="data-panel">
+            <div class="data-label">Anomalous Abilities Class [cite: 12]</div>
+            <div class="data-value">A5 [cite: 14]</div>
+        </div>
+        <div class="data-panel">
+            <div class="data-label">Risk Class [cite: 13]</div>
+            <div class="data-value danger">DANGER [cite: 15] / OMNIA [cite: 16]</div>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="data-panel">
+            <div class="data-label">Handler [cite: 17]</div>
+            <div class="data-value">Site Typhon [cite: 19]</div>
+        </div>
+        <div class="data-panel">
+            <div class="data-label">Discovered [cite: 18]</div>
+            <div class="data-value">Dec 24, 2025 [cite: 25, 20]</div>
+        </div>
+        <div class="data-panel">
+            <div class="data-label">Research Head [cite: 21]</div>
+            <div class="data-value">June Ashby [cite: 22]</div>
+        </div>
+        <div class="data-panel">
+            <div class="data-label">Date Updated [cite: 23, 24]</div>
+            <div class="data-value">Mar 25, 2026 [cite: 26, 22]</div>
+        </div>
+    </div>
+
+    <div class="media-section">
+        <div class="media-item">
+            <div class="image-placeholder">[IMAGE REF: 7125 Photo]</div>
+            <div class="media-caption">[1] Image was captured by Research Head June Ashby on January 5, 2025 when 7125 was taken in for photo capturing. [cite: 27]</div>
+        </div>
+        <div class="media-item">
+            <div class="image-placeholder">[IMAGE REF: Anomalous Abilities]</div>
+            <div class="media-caption">[2] Image is 7125's anomalous abilities on turning objects into a charcoal-like shadow. [cite: 28, 29]</div>
+        </div>
+        <div class="media-item">
+            <div class="image-placeholder">[IMAGE REF: Etherlax Crystal]</div>
+            <div class="media-caption">[3] Image is 7125's weakness, the Etherlax Crystal, capable of completely restricting, resisting, and rebounding 7125's abilities. [cite: 29]</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h3>Description and Information [cite: 30] <span class="date-stamp">Mar 24, 2026 [cite: 35]</span></h3>
+        <p>[Description data regarding ITEM 7125 [cite: 31] goes here. Expand on physical characteristics and behavioral traits.]</p>
+    </div>
+
+    <div class="content-section">
+        <h3>Containment Procedures [cite: 32] <span class="date-stamp">Mar 24, 2026 [cite: 36]</span></h3>
+        <p>[Details regarding how ITEM 7125 [cite: 33] is safely kept at Site Typhon goes here. Mention required personnel and physical restraints.]</p>
+    </div>
+
+    <div class="content-section">
+        <h3>Testing Procedures [cite: 34] <span class="date-stamp">Mar 24, 2026 [cite: 37]</span></h3>
+        <p>[Logs of interactions using the Etherlax Crystal and tests conducted by June Ashby go here.]</p>
+    </div>
+
+    <div class="content-section">
+        <h3>Additional Information [cite: 38] <span class="date-stamp">Mar 24, 2026 [cite: 39]</span></h3>
+        <p>[Any addendums, incident reports, or secondary classifications belong in this section.]</p>
+    </div>
+
+</div>
+
+</body>
+</html>
